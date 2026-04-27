@@ -52,18 +52,17 @@ After installing, **restart your PC**.
 Open PowerShell and run:
 
 ```powershell
-# Create the module folder
+# Forcer TLS 1.2
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+# Ensuite relancer le téléchargement
 $modulePath = "$HOME\Documents\WindowsPowerShell\Modules\pastebinit"
 New-Item -ItemType Directory -Force -Path $modulePath
 
-# Download the module
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/ps81frt/paste-binit/main/pastebinit.psm1" `
     -OutFile "$modulePath\pastebinit.psm1"
 
-# Import the module
 Import-Module pastebinit
-
-# Verify
 pastebinit -List
 ```
 
