@@ -83,7 +83,7 @@ function pastebinit {
         [switch]$List,
 
         [Alias('b')]
-        [string]$Service = 'paste.debian.net',
+        [string]$Service = 'dpaste.com',
 
         [Alias('a')]
         [string]$Author = $env:USERNAME,
